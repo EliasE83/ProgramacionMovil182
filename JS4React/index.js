@@ -97,5 +97,56 @@ console.log([...nombres, ...edades]);
 
 // MODULOS: Importar y Exportar
 
-import * as calc from "./calculadora.js";
-console.log(calc.sumar(2, 3));
+// import * as calc from "./calculadora.js";
+// console.log(calc.sumar(2, 3));
+
+/* https://jsonplaceholder.typicode.com/posts */
+
+// const ul = document.createElement('ul')
+
+// let datos = fetch('https://jsonplaceholder.typicode.com/posts')
+//         .then(function (response){
+//             console.log("Carga de datos completada");
+//             return response.json()
+            
+//         }).then(function (data){
+//             console.log(data)
+//             data.forEach(
+//                 function (post){
+//                     const li = document.createElement('li')
+//                     li.innerHTML = post.title
+//                     // Agregamos el li a la ul con append
+//                     ul.append(li)
+//                 });
+//                 document.body.append(ul)
+//         })
+
+// console.log("Cargando HTML")
+// console.log("Cargando CSS")
+// console.log("Cargando Imagenes")
+
+// console.log(datos)
+
+// Declaramos una funcion de tipo async para ejemplificar 
+const ul = document.createElement('ul')
+
+async function cargarDatos(){
+    const response = await fetch ("https://jsonplaceholder.typicode.com/posts")
+    const datos = await response.json()
+    console.log(datos)
+    console.log(response)
+    datos.forEach(function (post){
+        const li = document.createElement('li')
+        li.innerHTML = post.title
+        // Agregamos el li a la ul con append
+        ul.append(li)
+    });
+    document.body.append(ul)
+}
+
+cargarDatos()
+
+console.log("Cargando HTML")
+console.log("Cargando CSS")
+console.log("Cargando Imagenes")
+
