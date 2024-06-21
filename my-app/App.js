@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Button, TextInput, View } from 'react-native';
+import { StyleSheet, Text, Button, TextInput, View, ImageBackground } from 'react-native';
 import React, {useState} from 'react';
+
 
 export default function App() {
   const [text1, setText1] = useState('Texto Default'); 
@@ -12,27 +13,30 @@ export default function App() {
   };
 
   return (
+    <ImageBackground source={require('./assets/fondo.png')} resizeMode="cover" style={styles.background}>
     <View style={styles.container}>
+      
+        <View style={{flex: 2}}/>
 
-      <View style={{flex: 2}}/>
+        <View style={styles.card}>
+          <Text style={styles.texto}>Nombre:</Text>
+          <TextInput style={styles.input} inputMode='text' onChangeText={(t)=>setText1(t)}/>
 
-      <View style={styles.card}>
-        <Text style={styles.texto}>Nombre:</Text>
-        <TextInput style={styles.input} inputMode='text' onChangeText={(t)=>setText1(t)}/>
+          <Text style={styles.texto}>Email:</Text>
+          <TextInput style={styles.input} inputMode='email' onChangeText={(t)=>setText2(t)}/>
 
-        <Text style={styles.texto}>Email:</Text>
-        <TextInput style={styles.input} inputMode='email' onChangeText={(t)=>setText2(t)}/>
+          <Text style={styles.texto}>Password:</Text>
+          <TextInput style={styles.input} onChangeText={(t)=>setText3(t)} secureTextEntry/>
 
-        <Text style={styles.texto}>Password:</Text>
-        <TextInput style={styles.input} onChangeText={(t)=>setText3(t)} secureTextEntry/>
+          <Button color='red' title="Guardar" onPress={() => {alerta();}}/>
+        </View>
 
-        <Button color='red' title="Guardar" onPress={() => {alerta();}}/>
-      </View>
+        <View style={{flex: 2}}></View>
 
-      <View style={{flex: 2}}></View>
-
-      <StatusBar style="auto" />
+        <StatusBar style="auto" />
+      
     </View>
+    </ImageBackground>
   );
 }
 
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#212121',
+    // backgroundColor: '#212121',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -62,6 +66,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     backgroundColor: 'lightgrey',
     borderColor: 'lightgrey',
+  },
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
 
 
