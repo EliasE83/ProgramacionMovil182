@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View, TextInput, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'; /* Importaciones de componentes */
+import { Button, StyleSheet, Text, View, TextInput, ScrollView, Dimensions } from 'react-native'; /* Importaciones de componentes */
 import React, {useState} from 'react'; /* Importaciones de librerias */
 
 // const Texto =({estilo})=>{
@@ -23,20 +23,52 @@ export default function App() {
   return (
     <View style={styles.container}>
 
+      <ScrollView style={styles.scrollview}>
+
       <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+      <Text style={{color: "white",}} >Componente TextInput: {submit}</Text>
+
       <TextInput style={styles.input} placeholder='Soy un input :)' onChangeText={(t)=>setText(t)}/>
 
-      <Button title='Presioname' style={{height: 40,}} onPress={()=>{setSubmit(text); alert('Alerta pendiente\n Alerta\n Alerta')}}></Button>
+      <Button title='Presioname' style={{height: 40}} onPress={()=>{setSubmit(text); alert(text)}}></Button>
 
-      <View style={styles.countContainer}>
-        <Text style={styles.countText}>Count: {count}</Text>
-      </View>
-      <TouchableWithoutFeedback onPress={onPress}>
-        <View style={styles.button}>
-          <Text>Touch Here</Text>
-        </View>
-      </TouchableWithoutFeedback>
-
+      </ScrollView>
 
       <StatusBar style="auto" />
     </View>
@@ -49,7 +81,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#212121',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center',  
   },
 
     input: {
@@ -67,12 +99,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#DDDDDD',
       padding: 10,
     },
-    countContainer: {
-      alignItems: 'center',
-      padding: 10,
-    },
-    countText: {
-      color: '#FF00FF',
+    scrollview: {
+      width: Dimensions.get('window').width,
     },
 
   // text: {
