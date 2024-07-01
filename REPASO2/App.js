@@ -36,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <ImageBackground source={require('./assets/fondo.png')} resizeMode="cover" style={styles.background}>
+    <ImageBackground source={require('./assets/fondo2.jpg')} resizeMode="cover" style={styles.background}>
       <View style={styles.container}>
         <View style={styles.botonera}>
           <Text style={{ fontSize: 30, color: 'white' }}>Buscador de Películas</Text>
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: '#212121'
+    paddingTop: 20,
   },
   input: {
     height: 40,
